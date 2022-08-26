@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="goal.vb" />
     <Compile Include="match.vb" />
+    <Compile Include="matchScheduled.vb" />
     <Compile Include="scoreManager.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

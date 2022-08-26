@@ -37,9 +37,9 @@ Partial Class frmMain
         '
         'txtMatch1
         '
-        Me.txtMatch1.Location = New System.Drawing.Point(249, 205)
+        Me.txtMatch1.Location = New System.Drawing.Point(208, 205)
         Me.txtMatch1.Name = "txtMatch1"
-        Me.txtMatch1.Size = New System.Drawing.Size(283, 23)
+        Me.txtMatch1.Size = New System.Drawing.Size(293, 23)
         Me.txtMatch1.TabIndex = 1
         '
         'frmMain

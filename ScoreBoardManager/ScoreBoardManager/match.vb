@@ -1,15 +1,10 @@
 ﻿Public Class match
 
     'Starting date and time
-    Public Property dateMatch As DateTime
+    Public Property matchData As matchScheduled
 
     'Match Minute
     Public Property minuteMatch As Integer
-
-    'Team names
-    Public Property homeTeam As String
-
-    Public Property awayTeam As String
 
     'Scores
     Public Property homeScore As Integer

@@ -1,17 +1,12 @@
 ﻿Public Class scoreManager
 
-    Public Shared Function InitMacth(dateTime As DateTime,
-                              homeTeam As String,
-                              awayTeam As String
-                              ) As match
+    Public Shared Function InitMacth(matchAux As matchScheduled) As match
 
         Dim newMatch As New match
 
         Try
             With newMatch
-                .dateMatch = dateTime
-                .homeTeam = homeTeam
-                .awayTeam = awayTeam
+                .matchData = matchAux
                 .minuteMatch = 0
                 .homeScore = 0
                 .awayScore = 0

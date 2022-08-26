@@ -1,0 +1,27 @@
+[
+    {
+      "home": "Mexico",
+      "away": "Canada",
+      "date": "2022-08-28T15:00:00Z"
+    },
+    {
+      "home": "Spain",
+      "away": "Brazil",
+      "date": "2022-08-28T16:00:00Z"
+    },
+    {
+      "home": "Germany",
+      "away": "France",
+      "date": "2022-08-28T17:00:00Z"
+    },
+    {
+      "home": "Uruguay",
+      "away": "Italy",
+      "date": "2022-08-28T18:00:00Z"
+    },
+    {
+      "home": "Argentina",
+      "away": "Australia",
+      "date": "2022-08-28T19:00:00Z"
+    }
+]
