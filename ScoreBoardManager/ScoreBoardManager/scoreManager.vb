@@ -1,6 +1,6 @@
 ﻿Public Class scoreManager
 
-    Public Function InitMacth(dateTime As DateTime,
+    Public Shared Function InitMacth(dateTime As DateTime,
                               homeTeam As String,
                               awayTeam As String
                               ) As match
