@@ -1,12 +1,12 @@
-﻿Public Class goal
+﻿Public Class Goal
 
     'Minute when goal is scored
-    Public Property minute As Integer
+    Public Property Minute As Integer
 
     'Player name
-    Public Property player As String
+    Public Property Player As String
 
     'Team name
-    Public Property team As String
+    Public Property Team As String
 
 End Class

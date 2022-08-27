@@ -1,22 +1,22 @@
-﻿Public Class scoreManager
+﻿Public Class ScoreManager
 
-    Public Shared Function InitMacth(matchAux As matchScheduled) As match
+    Public Shared Function InitMacth(matchAux As MatchScheduled) As Match
 
-        Dim newMatch As New match
+        Dim newMatch As New Match
 
         Try
             With newMatch
-                .matchData = matchAux
-                .minuteMatch = 0
-                .homeScore = 0
-                .awayScore = 0
-                .isFinished = False
-                .isValid = True
+                .MatchData = matchAux
+                .MinuteMatch = 0
+                .HomeScore = 0
+                .AwayScore = 0
+                .IsFinished = False
+                .IsValid = True
             End With
 
         Catch ex As Exception
             With newMatch
-                .isValid = False
+                .IsValid = False
             End With
 
         End Try

@@ -1,11 +1,11 @@
-﻿Public Class matchScheduled
+﻿Public Class MatchScheduled
 
     'Starting date and time
-    Public Property dateMatch As DateTime
+    Public Property DateMatch As DateTime
 
     'Team names
-    Public Property homeTeam As String
+    Public Property HomeTeam As String
 
-    Public Property awayTeam As String
+    Public Property AwayTeam As String
 
 End Class

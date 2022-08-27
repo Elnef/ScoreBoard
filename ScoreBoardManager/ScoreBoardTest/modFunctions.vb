@@ -1,18 +1,24 @@
 ﻿Module modFunctions
 
-    Public matchesScheduled As New List(Of ScoreBoardManager.matchScheduled) From
+    ' This is our global scoreBoard
+    Public scoreBoard As New List(Of ScoreBoardManager.Match)
+
+    ' 
+    Public matchesScheduled As New List(Of ScoreBoardManager.MatchScheduled) From
         {
-            New ScoreBoardManager.matchScheduled With {.dateMatch = "2022-08-26T15:00:00Z", .homeTeam = "Mexico", .awayTeam = "Canada"},
-            New ScoreBoardManager.matchScheduled With {.dateMatch = "2022-08-26T16:00:00Z", .homeTeam = "Spain", .awayTeam = "Brazil"},
-            New ScoreBoardManager.matchScheduled With {.dateMatch = "2022-08-26T17:00:00Z", .homeTeam = "Germany", .awayTeam = "France"},
-            New ScoreBoardManager.matchScheduled With {.dateMatch = "2022-08-26T18:00:00Z", .homeTeam = "Uruguay", .awayTeam = "Italy"},
-            New ScoreBoardManager.matchScheduled With {.dateMatch = "2022-08-26T19:00:00Z", .homeTeam = "Argentina", .awayTeam = "Australia"}
+            New ScoreBoardManager.MatchScheduled With {.DateMatch = "2022-08-26T15:00:00Z", .HomeTeam = "Mexico", .AwayTeam = "Canada"},
+            New ScoreBoardManager.MatchScheduled With {.DateMatch = "2022-08-26T16:00:00Z", .HomeTeam = "Spain", .AwayTeam = "Brazil"},
+            New ScoreBoardManager.MatchScheduled With {.DateMatch = "2022-08-26T17:00:00Z", .HomeTeam = "Germany", .AwayTeam = "France"},
+            New ScoreBoardManager.MatchScheduled With {.DateMatch = "2022-08-26T18:00:00Z", .HomeTeam = "Uruguay", .AwayTeam = "Italy"},
+            New ScoreBoardManager.MatchScheduled With {.DateMatch = "2022-08-26T19:00:00Z", .HomeTeam = "Argentina", .AwayTeam = "Australia"}
         }
 
-    Public Function readInitMatchList() As List(Of ScoreBoardManager.match)
+    Public Function ReadInitMatchList() As Boolean
 
-        Dim scoreBoard As List(Of ScoreBoardManager.match)
-        Dim match As ScoreBoardManager.match
+        Dim match As ScoreBoardManager.Match
+        Dim initCompleted = False
+        'Dim scoreBoardTemp(matchesScheduled.Count) As ScoreBoardManager.Match
+        'Dim scoreBoardTemp As New List(Of ScoreBoardManager.Match)
 
         Try
             If matchesScheduled.Count > 0 Then
@@ -20,15 +26,15 @@
                     match = ScoreBoardManager.scoreManager.InitMacth(matchScheduled)
                     scoreBoard.Add(match)
                 Next
+                'scoreBoard = scoreBoardTemp
+                initCompleted = True
             End If
-
         Catch ex As Exception
-
+            Console.WriteLine("ReadInitMatchList Error: " & ex.Message)
 
         End Try
 
-        Return scoreBoard
-
+        Return initCompleted
 
     End Function
 

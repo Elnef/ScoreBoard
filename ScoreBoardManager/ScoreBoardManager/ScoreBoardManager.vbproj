@@ -64,10 +64,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="goal.vb" />
-    <Compile Include="match.vb" />
-    <Compile Include="matchScheduled.vb" />
-    <Compile Include="scoreManager.vb" />
+    <Compile Include="Goal.vb" />
+    <Compile Include="Match.vb" />
+    <Compile Include="MatchScheduled.vb" />
+    <Compile Include="ScoreManager.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
