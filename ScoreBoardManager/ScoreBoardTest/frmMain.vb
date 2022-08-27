@@ -23,7 +23,21 @@
     End Sub
 
     Private Sub ShowMatchesList()
-        txtMatch1.Text = scoreBoard.ToString
+
+        ' Create the arrays of labels
+        Dim labelHome() As Label = {Label1, Label2, Label3, Label4, Label5}
+        Dim labelAway() As Label = {Label6, Label7, Label8, Label9, Label10}
+
+        Dim index As Integer = 0
+
+        For Each score In scoreBoard
+            labelHome(index).Text = score.MatchData.HomeTeam
+            labelAway(index).Text = score.MatchData.AwayTeam
+            index = index + 1
+        Next
+
+        txt1.Text = scoreBoard(0).MatchData.HomeTeam
+
 
     End Sub
 
