@@ -34,5 +34,11 @@
 
     End Sub
 
+    Private Sub btnGenEvent_Click(sender As Object, e As EventArgs) Handles btnGenEvent.Click
+
+        SendEvent()
+        ShowMatchesList()
+
+    End Sub
 
 End Class

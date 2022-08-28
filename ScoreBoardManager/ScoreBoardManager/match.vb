@@ -3,9 +3,6 @@
     'Starting date and time
     Public Property MatchData As MatchScheduled
 
-    'Match Minute
-    Public Property MinuteMatch As Integer
-
     'Scores
     Public Property HomeScore As Integer
 

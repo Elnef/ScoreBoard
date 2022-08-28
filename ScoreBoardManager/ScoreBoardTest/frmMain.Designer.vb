@@ -65,6 +65,7 @@ Partial Class frmMain
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
+        Me.btnGenEvent = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -526,11 +527,21 @@ Partial Class frmMain
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.TopRight
         Me.Label20.Visible = False
         '
+        'btnGenEvent
+        '
+        Me.btnGenEvent.Location = New System.Drawing.Point(12, 67)
+        Me.btnGenEvent.Name = "btnGenEvent"
+        Me.btnGenEvent.Size = New System.Drawing.Size(108, 37)
+        Me.btnGenEvent.TabIndex = 5
+        Me.btnGenEvent.Text = "Send Event"
+        Me.btnGenEvent.UseVisualStyleBackColor = True
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(636, 207)
+        Me.Controls.Add(Me.btnGenEvent)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BtnInitProcess)
@@ -586,4 +597,5 @@ Partial Class frmMain
     Friend WithEvents Label18 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
+    Friend WithEvents btnGenEvent As Button
 End Class
