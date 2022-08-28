@@ -11,6 +11,9 @@
 
     Public Property AwayScore As Integer
 
+    'Flag to match started
+    Public Property IsStarted As Boolean
+
     'Flag to match finished
     Public Property IsFinished As Boolean
 
