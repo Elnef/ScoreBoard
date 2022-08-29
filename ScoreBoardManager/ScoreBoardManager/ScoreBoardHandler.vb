@@ -19,6 +19,7 @@
                 .IsValid = False
             End With
             MsgBox("Error InitMacth Function: " & ex.Message)
+            My.Application.Log.WriteEntry("Error InitMacth Function: " & ex.Message)
         End Try
 
         Return newMatch
@@ -40,6 +41,7 @@
             End If
         Catch ex As Exception
             MsgBox("InitMatchList Function: " & ex.Message)
+            My.Application.Log.WriteEntry("InitMatchList Function: " & ex.Message)
         End Try
 
         Return scoreBoardTemp
@@ -74,18 +76,21 @@
                         Case Else
                             ' EventId invalid. Return original scoreBoard without changes
                             MsgBox("EventId: " & .EventID & " invalid. Event received discarded")
+                            My.Application.Log.WriteEntry("EventId: " & .EventID & " invalid. Event received discarded")
 
                     End Select
                 Else
                     ' index = -1 indicate that eventReceived.Team is not present in our score board then
                     ' event invalid. Return original scoreBoard without changes
                     MsgBox("Team: " & .Team & " invalid. Event received discarded")
+                    My.Application.Log.WriteEntry("Team: " & .Team & " invalid. Event received discarded")
 
                 End If
 
             End With
         Catch ex As Exception
             MsgBox("Error EventHandler Function: " & ex.Message)
+            My.Application.Log.WriteEntry("Error EventHandler Function: " & ex.Message)
         End Try
 
         Return scoreBoard
