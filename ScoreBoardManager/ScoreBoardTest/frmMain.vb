@@ -3,14 +3,9 @@
     Private Sub BtnInitProcess_Click(sender As Object, e As EventArgs) Handles BtnInitProcess.Click
 
         ' init matches list
-        If ReadInitMatchList() Then
-            ' Matches scheduled added correctly
-            ShowMatchesList()
-        Else
-            ' Error adding matches scheduled
-            Console.WriteLine("Matches information is incorrect")
-        End If
-
+        InitMatchListFromMathScheduled()
+        ' Matches scheduled added correctly
+        ShowMatchesList()
 
     End Sub
 
@@ -30,10 +25,20 @@
             labelAway(index).Text = score.MatchData.AwayTeam
             textHome(index).Text = score.HomeScore
             textAway(index).Text = score.AwayScore
+            labelHome(index).Visible = True
+            labelAway(index).Visible = True
+            textHome(index).Visible = True
+            textAway(index).Visible = True
             index += 1
         Next
 
     End Sub
 
+    Private Sub btnGenEvent_Click(sender As Object, e As EventArgs) Handles btnGenEvent.Click
+
+        SendEvent()
+        ShowMatchesList()
+
+    End Sub
 
 End Class
