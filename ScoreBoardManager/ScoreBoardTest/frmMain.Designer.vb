@@ -330,7 +330,7 @@ Partial Class frmMain
         Me.GroupBox2.Size = New System.Drawing.Size(251, 194)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Matches Finished"
+        Me.GroupBox2.Text = "Finished Matches "
         '
         'TextBox11
         '

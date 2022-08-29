@@ -18,7 +18,6 @@
             With newMatch
                 .IsValid = False
             End With
-            MsgBox("Error InitMacth Function: " & ex.Message)
             My.Application.Log.WriteEntry("Error InitMacth Function: " & ex.Message)
         End Try
 
@@ -40,7 +39,6 @@
                 Next
             End If
         Catch ex As Exception
-            MsgBox("InitMatchList Function: " & ex.Message)
             My.Application.Log.WriteEntry("InitMatchList Function: " & ex.Message)
         End Try
 
@@ -75,25 +73,44 @@
                             End If
                         Case Else
                             ' EventId invalid. Return original scoreBoard without changes
-                            MsgBox("EventId: " & .EventID & " invalid. Event received discarded")
+                            'MsgBox("EventId: " & .EventID & " invalid. Event received discarded")
                             My.Application.Log.WriteEntry("EventId: " & .EventID & " invalid. Event received discarded")
 
                     End Select
                 Else
                     ' index = -1 indicate that eventReceived.Team is not present in our score board then
                     ' event invalid. Return original scoreBoard without changes
-                    MsgBox("Team: " & .Team & " invalid. Event received discarded")
+                    'MsgBox("Team: " & .Team & " invalid. Event received discarded")
                     My.Application.Log.WriteEntry("Team: " & .Team & " invalid. Event received discarded")
 
                 End If
 
             End With
         Catch ex As Exception
-            MsgBox("Error EventHandler Function: " & ex.Message)
             My.Application.Log.WriteEntry("Error EventHandler Function: " & ex.Message)
         End Try
 
         Return scoreBoard
+
+    End Function
+
+    Public Shared Function UpdateFinishedMatchesList(scoreBoard As List(Of Match)) As List(Of Match)
+
+        Dim FinishedMatches As New List(Of Match)
+        Dim FinishedMatchesSorted As New List(Of Match)
+
+        Try
+            For Each score In scoreBoard
+                If score.IsFinished = True Then
+                    FinishedMatches.Insert(0, score)
+                End If
+            Next
+            FinishedMatchesSorted = FinishedMatches.OrderByDescending(Function(matchAux) matchAux.HomeScore + matchAux.AwayScore).ToList
+        Catch ex As Exception
+            My.Application.Log.WriteEntry("Error UpdateFinishedMatchesList Function: " & ex.Message)
+        End Try
+
+        Return FinishedMatchesSorted
 
     End Function
 

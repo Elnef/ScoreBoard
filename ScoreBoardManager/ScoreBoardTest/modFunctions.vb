@@ -4,14 +4,17 @@ Module modFunctions
     ' This is our global scoreBoard
     Public scoreBoard As New List(Of Match)
 
+    ' This is our global scoreBoard with finished matches
+    Public finalScoreBoard As New List(Of Match)
+
     ' This is a simulated matches list
     Public matchesScheduled As New List(Of MatchScheduled) From
         {
-            New MatchScheduled With {.DateMatch = "2022-08-26T15:00:00Z", .HomeTeam = "Mexico", .AwayTeam = "Canada"},
-            New MatchScheduled With {.DateMatch = "2022-08-26T16:00:00Z", .HomeTeam = "Spain", .AwayTeam = "Brazil"},
-            New MatchScheduled With {.DateMatch = "2022-08-26T17:00:00Z", .HomeTeam = "Germany", .AwayTeam = "France"},
-            New MatchScheduled With {.DateMatch = "2022-08-26T18:00:00Z", .HomeTeam = "Uruguay", .AwayTeam = "Italy"},
-            New MatchScheduled With {.DateMatch = "2022-08-26T19:00:00Z", .HomeTeam = "Argentina", .AwayTeam = "Australia"}
+            New MatchScheduled With {.DateMatch = "2022-08-30 15:00:00", .HomeTeam = "Mexico", .AwayTeam = "Canada"},
+            New MatchScheduled With {.DateMatch = "2022-08-30 16:00:00", .HomeTeam = "Spain", .AwayTeam = "Brazil"},
+            New MatchScheduled With {.DateMatch = "2022-08-30 17:00:00", .HomeTeam = "Germany", .AwayTeam = "France"},
+            New MatchScheduled With {.DateMatch = "2022-08-30 18:00:00", .HomeTeam = "Uruguay", .AwayTeam = "Italy"},
+            New MatchScheduled With {.DateMatch = "2022-08-30 19:00:00", .HomeTeam = "Argentina", .AwayTeam = "Australia"}
         }
 
     Public eventIndex As Integer
@@ -66,7 +69,7 @@ Module modFunctions
             New MatchEvent With {.EventID = 3, .Team = "Uruguay"},
             New MatchEvent With {.EventID = 2, .Team = "Uruguay"},
             New MatchEvent With {.EventID = 3, .Team = "Australia"},
-            New MatchEvent With {.EventID = 2, .Team = "Argentina"},
+            New MatchEvent With {.EventID = 3, .Team = "Argentina"},
             New MatchEvent With {.EventID = 2, .Team = "Argentina"}
         }
 
@@ -74,6 +77,7 @@ Module modFunctions
     Public Sub InitMatchListFromMathScheduled()
 
         scoreBoard = ScoreBoardHandler.InitMatchList(matchesScheduled)
+        finalScoreBoard = ScoreBoardHandler.UpdateFinishedMatchesList(scoreBoard)
         ' Reset event index
         eventIndex = 0
 
@@ -88,6 +92,12 @@ Module modFunctions
         Else
             MsgBox("No more available events", MessageBoxIcon.Information)
         End If
+
+    End Sub
+
+    Public Sub UpdateFinalScoreBoard()
+
+        finalScoreBoard = ScoreBoardHandler.UpdateFinishedMatchesList(scoreBoard)
 
     End Sub
 
